@@ -1,0 +1,64 @@
+===========================================================================================
+title: "Readme"
+author: "Chrysak"
+date: "Sunday, November 23, 2014"
+output: html_document
+===========================================================================================
+
+# Getting & Cleaning Data course Project: UCI Human Activity Recognition using Smartphones  
+
+## Source  
+
+  This data analysis is based on Human Activity Recognition experiments' data sets available on the    
+  UCI Machine Learning web site: 
+  UCI ML site: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
+  UCI HAR data: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
+## UCI HAR experiments data sets
+
+  The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48           
+  years. 
+  Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING,   
+  STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. 
+  Using its embedded accelerometer and gyroscope, 3-axial linear acceleration and 3-axial angular   
+  velocity were captured at a constant rate of 50Hz. 
+  The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was 
+  selected for generating the training data and 30% the test data. 
+  
+  In a first, it is required to (re)combine both training and test data sets, wih appropriate labels,
+  for having the complete and single data set before its partioning.
+  
+## Estimated mean and standard deviation variables from the HAR data set of the 30 volunteers   
+
+  For our purposes, the estimated mean and standard deviation variables from these experiments are
+  oly extracted for obtaining a new single (sub) data set for the 30 volunteers.
+  
+  For each record of this new data set (refer to the "dataSetStep4.txt"" file), its mean and 
+  standard deviation variables are those for the following initial data:
+  
+       - the filtered time domain body and gravity acceleration signals (Body_Acc_<XYZ> and 
+         Gravity_Acc_<XYZ>)
+         
+       - the Jerk signals obtained by derivation in time of the body linear acceleration and     
+         angular velocity (Body_AccJerk_<XYZ> and Body_GyroJerk_<XYZ>)
+         
+       - the calculated magnitude of these three-dimensional signals (Body_Acc_Mag, Gravity_Acc_Mag, 
+         Body_AccJerk_Mag, Body_Gyro_Mag, Body_GyroJerk_Mag)
+         
+       - the applied Fast Fourier Transform (FFT) applied to some of these signals producing 
+         FFTBody_Acc_<XYZ>, FFTBody_AccJerk_<XYZ>, FFTBody_Gyro_<XYZ>, FFTBody_AccJerk_Mag, 
+         FFTBody_Gyro_Mag, FFTBody_GyroJerk_Mag 
+         
+  Notes: 
+  all initial variables were renamed for this data set, according to the labelling syntax 
+  mentioned above.
+  The FFT signals were also kept as a calculation on time-domain variables (f= 1/T) 
+   
+## The averages of the variables for each subject and per activity
+
+  Finally, from this last data set, it is calculated the average of all variables listed above for 
+  each volunteer and per activity (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING,   
+  STANDING, LAYING).
+  
+  It constitues the final data set of this analysis (refer to the "tidyDataSetStep5.txt" file)
+            
